@@ -1,0 +1,11 @@
+/* You can add global styles to this file, and also import other style files */
+@import '~handsontable/dist/handsontable.full.min.css';
+
+.handsontable td.selected {
+    font-weight: bold;
+    background-color: rgb(193, 251, 193);
+}
+/* .handsontable td.inputFormula {
+    font-weight: bold;
+    background-color: #ffe3e3;
+} */

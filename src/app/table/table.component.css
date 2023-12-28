@@ -1,0 +1,19 @@
+.container-content {
+  background-color: black;
+  height: 100vh;
+  width: 100vw;
+
+  display: flex;
+  flex-flow: nowrap;
+}
+.left-content {
+  background-color: #01111f;
+  width: 90vw;
+  max-width: calc(100% - 210px);
+  padding: 0 2px;
+}
+.right-content {
+  background-color: #011022;
+  max-width: calc(100% - 210px);
+  padding: 0.5rem 10px;
+}
