@@ -8,12 +8,141 @@
 }
 .left-content {
   background-color: #01111f;
-  width: 90vw;
-  max-width: calc(100% - 210px);
-  padding: 0 2px;
+  /* width: 90vw; */
+  /* -webkit-box-flex: 0; */
+  /* -ms-flex: 0 0 calc(100% - 210px); */
+  /* flex: 0 0 calc(100% - 214px); */
+  width: calc(100% - 214px);
+  margin: 0 2px;
 }
 .right-content {
   background-color: #011022;
-  max-width: calc(100% - 210px);
+  width: 190px !important;
+  /* max-width: calc(100% - 210px); */
   padding: 0.5rem 10px;
+}
+.row-above {
+  display: flex;
+  flex-flow: nowrap;
+}
+.row-above button {
+  background-color: #1d233b;
+  color: white;
+  min-height: 40px;
+  min-width: 40px;
+  border: none;
+  border-radius: 4px;
+
+  font-size: 20px;
+  font-weight: 700;
+  text-align: center;
+}
+.row-above input {
+  background-color: #171b2c;
+  color: white;
+  width: 100%;
+
+  border: none;
+  border-radius: 0 4px 4px 0;
+  padding: 3px 3px 3px 0;
+  margin: 0 7px 0 0;
+}
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+.row-above input:focus-visible {
+  border: none;
+  outline: none;
+}
+.prefix-money-input {
+  background-color: #171b2c;
+  color: white;
+
+  height: 40px;
+  border-radius: 4px 0 0 4px;
+  margin: 0 0 0 7px;
+  padding: 0 6px;
+
+  display: flex;
+  align-items: center;
+}
+.row-below {
+  width: 100%;
+  display: flex;
+  flex-flow: nowrap;
+  justify-content: space-between;
+
+  margin: 8px 0;
+}
+.row-below button {
+  background-color: #1d233b;
+  color: white;
+  width: calc((100% - 12px) / 3);
+  height: 36px;
+
+  border: none;
+  border-radius: 10px;
+  /* margin: 0 3px; */
+
+  font-size: 14px;
+  font-weight: 400;
+  text-align: center;
+}
+.button-above button {
+  background-color: #373c3e;
+  width: 100%;
+  height: 60px;
+
+  border-radius: 10px;
+  border: none;
+  margin: 0.375rem 0;
+
+  color: white;
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.button-buy-active {
+  background-color: #1fb497 !important;
+  /* width: 100%;
+  height: 60px;
+
+  border-radius: 10px;
+  border: none;
+  margin: 0.75rem 0;
+
+  color: white;
+  font-size: 20px;
+  font-weight: 700; */
+}
+
+.button-sell-active {
+  background-color: #f81057 !important;
+  /* width: 100%;
+  height: 60px;
+
+  border-radius: 10px;
+  border: none;
+  margin: 0.75rem 0;
+
+  color: white;
+  font-size: 20px;
+  font-weight: 700; */
+}
+
+.profit {
+  text-align: center;
+  color: white;
+  font-size: 14px;
+
+  padding: 1rem 0 0.25rem 0;
+}
+
+.progress {
+  height: 0.4rem;
+  background-color: #199079;
+  margin: 0 0 0.5rem 0;
+  border-radius: 0.25rem;
 }

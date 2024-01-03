@@ -42,6 +42,34 @@ export class TableComponent {
     ['579', '76', '901', null],
     ['946', '56', '4867', null],
   ];
+
+  //
+  //
+  //
+  //
+  //
+  //
+  public valueSetAmountArr: any[] = [];
+  public row2MoneyInput: any[] = [];
+  public row3MoneyInput: any[] = [];
+  public progressBarValue: any;
+  //
+  //
+  //
+  ngOnInit() {
+    this.valueSetAmountArr = [{}];
+    this.row2MoneyInput = [5, 10, 20];
+    this.row3MoneyInput = [50, 100, 'All'];
+
+    this.progressBarValue = 40;
+    let element = document.getElementById('progress-bar');
+    if (element) {
+      element.setAttribute(
+        'style',
+        `background-color: #b3041b;width: ${this.progressBarValue}%;height: 100%;border-radius: 0.25rem 0 0 0.25rem;float: left;left: 0;`
+      );
+    }
+  }
   ngAfterViewInit() {
     this.renderHandsonTable();
   }
