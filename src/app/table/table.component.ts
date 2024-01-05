@@ -53,6 +53,9 @@ export class TableComponent {
   public row2MoneyInput: any[] = [];
   public row3MoneyInput: any[] = [];
   public progressBarValue: any;
+  public isActiveTab: boolean = false;
+  public tabIdOld: any;
+  public historyData: any[] = [];
   //
   //
   //
@@ -69,10 +72,138 @@ export class TableComponent {
         `background-color: #b3041b;width: ${this.progressBarValue}%;height: 100%;border-radius: 0.25rem 0 0 0.25rem;float: left;left: 0;`
       );
     }
+
+    this.historyData = [
+      [
+        '1',
+        '0',
+        '0',
+        '1',
+        '0',
+        '1',
+        '0',
+        '0',
+        '1',
+        '0',
+        '1',
+        '0',
+        '0',
+        '1',
+        '0',
+        '1',
+        '0',
+        '0',
+        '1',
+        '0',
+      ],
+      [
+        '1',
+        '0',
+        '0',
+        '1',
+        '0',
+        '1',
+        '0',
+        '0',
+        '1',
+        '0',
+        '1',
+        '0',
+        '0',
+        '1',
+        '0',
+        '1',
+        '0',
+        '0',
+        '1',
+        '0',
+      ],
+      [
+        '1',
+        '0',
+        '0',
+        '1',
+        '0',
+        '1',
+        '0',
+        '0',
+        '1',
+        '0',
+        '1',
+        '0',
+        '0',
+        '1',
+        '0',
+        '1',
+        '0',
+        '0',
+        '1',
+        '0',
+      ],
+      [
+        '1',
+        '0',
+        '0',
+        '1',
+        '0',
+        '1',
+        '0',
+        '0',
+        '1',
+        '0',
+        '1',
+        '0',
+        '0',
+        '1',
+        '0',
+        '1',
+        '0',
+        '0',
+        '1',
+        '0',
+      ],
+      [
+        '1',
+        '0',
+        '0',
+        '1',
+        '0',
+        '1',
+        '0',
+        '0',
+        '1',
+        '0',
+        '1',
+        '0',
+        '0',
+        '1',
+        '0',
+        '1',
+        '0',
+        '0',
+        '1',
+        '0',
+      ],
+    ];
   }
   ngAfterViewInit() {
-    this.renderHandsonTable();
+    // this.renderHandsonTable();
   }
+  public onChangeTab(id: any): void {
+    console.log('id: ', id);
+    console.log('id:: ', document.getElementById(id));
+    this.tabIdOld &&
+      document
+        .getElementById(this.tabIdOld)
+        ?.setAttribute('class', 'tab-header-item');
+    document
+      .getElementById(id)
+      ?.setAttribute('class', 'tab-header-item-active');
+    this.tabIdOld = id;
+  }
+  ///////////////
+  /////////////
+  ///////////
   public onPaste(e: any) {
     let value: any = e.clipboardData.getData('text');
     let value1: any = value.replaceAll('\n', ',');
