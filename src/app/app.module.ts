@@ -11,16 +11,9 @@ import { TableComponent } from './table/table.component';
 // register Handsontable's modules
 registerAllModules();
 @NgModule({
-  declarations: [
-    AppComponent,
-    Table1Component,
-    TableComponent,
-  ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-  ],
+  declarations: [AppComponent, Table1Component, TableComponent],
+  imports: [BrowserModule, AppRoutingModule],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
