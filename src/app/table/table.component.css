@@ -1,7 +1,7 @@
 .container-content {
   background-color: black;
-  height: 100vh;
-  width: 100vw;
+  height: 100%;
+  width: 100%;
 
   display: flex;
   flex-flow: nowrap;
@@ -10,7 +10,7 @@
   font-family: "Sarabun, sans-serif !important";
 }
 .left-content {
-  background-color: #01111f;
+  background-color: #010d1b;
   /* width: 90vw; */
   /* -webkit-box-flex: 0; */
   /* -ms-flex: 0 0 calc(100% - 210px); */
@@ -19,7 +19,7 @@
   margin: 0 2px;
 }
 .top-left-content {
-  height: calc(75vh + 16.25px);
+  height: calc(75vh + 16.25px - 60.8px);
   background-image: url("../../assets/img/kinance_bg_chart.58c9a402.png");
   background-position: center;
   background-repeat: no-repeat;
@@ -85,7 +85,7 @@
   background-color: #2f3242;
 }
 .right-content {
-  background-color: #011022;
+  background-color: #010d1b;
   width: 190px !important;
   /* max-width: calc(100% - 210px); */
   padding: 0.5rem 10px;
@@ -107,7 +107,7 @@
   text-align: center;
 }
 .row-above input {
-  background-color: #171b2c;
+  background-color: #181a1b;
   color: white;
   width: 100%;
 
@@ -126,7 +126,7 @@ input::-webkit-inner-spin-button {
   outline: none;
 }
 .prefix-money-input {
-  background-color: #171b2c;
+  background-color: #181a1b;
   color: white;
 
   height: 40px;
@@ -217,5 +217,5 @@ input::-webkit-inner-spin-button {
 }
 
 .chart-0 {
-  height: calc(75vh + 16.25px);
+  height: calc(75vh + 16.25px - 60.8px);
 }

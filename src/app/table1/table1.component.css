@@ -4,8 +4,12 @@
   justify-content: space-between;
   align-items: center;
 
-  height: 65px;
-  padding: 2px 30px;
+  height: 50px;
+  padding: 5px 30px;
+  border-bottom: 1px solid #38342e;
+
+  background-color: #021022;
+  color: white;
 }
 .right-nav-bar {
   height: 100%;
@@ -17,4 +21,16 @@
   border: none;
   border-radius: 10px;
   padding: 5px 0;
+}
+.side-bar {
+  background-color: #021022;
+  /* height: calc(100% - 60.8px); */
+  width: 105px;
+
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+}
+.content {
+  width: 100%;
 }
