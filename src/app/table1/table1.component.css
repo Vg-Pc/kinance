@@ -24,7 +24,6 @@
 }
 .side-bar {
   background-color: #021022;
-  /* height: calc(100% - 60.8px); */
   width: 105px;
 
   display: flex;
