@@ -71,6 +71,8 @@ export class TableComponent {
         'style',
         `background-color: #b3041b;width: ${this.progressBarValue}%;height: 100%;border-radius: 0.25rem 0 0 0.25rem;float: left;left: 0;`
       );
+
+      this.onChangeTab('tab-1');
     }
 
     this.historyData = [
@@ -192,8 +194,6 @@ export class TableComponent {
     // this.renderHandsonTable();
   }
   public onChangeTab(id: any): void {
-    console.log('id: ', id);
-    console.log('id:: ', document.getElementById(id));
     this.tabIdOld &&
       document
         .getElementById(this.tabIdOld)
@@ -276,9 +276,9 @@ export class TableComponent {
     }
 
     // create the chart
-    Highcharts.stockChart('chart', {
+    var chart = Highcharts.stockChart('chart', {
       chart: {
-        height: 'height: calc(75vh + 16.25px); ',
+        height: 'height: calc(75vh + 16.25px);',
         backgroundColor: 'transparent',
       },
       rangeSelector: {
@@ -308,21 +308,21 @@ export class TableComponent {
         },
       },
       legend: {
-        enabled: true,
+        enabled: false,
       },
       yAxis: [
         {
-          height: '60%',
-        },
-        {
-          top: '60%',
-          height: '20%',
+          height: '80%',
+          gridLineColor: 'rgba(255, 255, 255, 0.3)',
+          gridLineDashStyle: 'Dash',
+          gridLineWidth: 1,
+          // labels: {
+          //   x: 20,
+          // },
         },
         {
           top: '80%',
           height: '20%',
-        },
-        {
           gridLineColor: 'rgba(255, 255, 255, 0.3)',
           gridLineDashStyle: 'Dash',
           gridLineWidth: 1,
@@ -335,6 +335,13 @@ export class TableComponent {
             exposeAsGroupOnly: true,
           },
         },
+        column: {
+          pointDescriptionFormatter: function () {
+            console.log('thissss', this);
+            // var color = this.y > 10 ? 'red' : 'green';
+            // return '<span style="color: ' + color + '">' + this.y + '</span>';
+          },
+        },
       },
       series: [
         {
@@ -342,6 +349,10 @@ export class TableComponent {
           id: 'aapl',
           name: 'AAPL',
           data: data,
+          color: '#c1063f',
+          upColor: '#199079',
+          lineColor: '#f92667',
+          upLineColor: '#56e2c6',
         },
         {
           type: 'column',
@@ -349,6 +360,10 @@ export class TableComponent {
           name: 'Volume',
           data: volume,
           yAxis: 1,
+          borderRadius: 0,
+          point: {
+            events: {},
+          },
         },
         {
           type: 'line',
@@ -356,80 +371,33 @@ export class TableComponent {
           // linkedTo: 'aapl',
           yAxis: 0,
           data: data,
-        },
-      ],
-    });
-  }
-
-  renderChart() {
-    Highcharts.stockChart('chart', {
-      chart: {
-        backgroundColor: '#01111f',
-      },
-      rangeSelector: {
-        enabled: false,
-      },
-      navigator: {
-        enabled: false,
-      },
-      scrollbar: {
-        enabled: false,
-      },
-      title: {
-        text: 'Candlestick Chart with Volume and Line',
-      },
-      xAxis: {
-        categories: ['A', 'B', 'C', 'D', 'E'],
-      },
-      yAxis: [
-        {
-          labels: {
-            align: 'right',
-            x: 30,
-          },
-          height: '60%',
-          lineWidth: 2,
-        },
-        {
-          labels: {
-            align: 'right',
-            x: 30,
-          },
-          top: '65%',
-          height: '35%',
-          offset: 0,
-          lineWidth: 2,
-        },
-        {
-          gridLineColor: 'rgba(255, 255, 255, 0.3)',
-          gridLineDashStyle: 'Dash',
-          gridLineWidth: 1,
-        },
-      ],
-      series: [
-        {
-          type: 'candlestick',
-          name: 'AAPL',
-          data: [
-            [172.7, 175.3, 171.64, 172],
-            [172.89, 174.14, 171.03, 172.17],
-          ],
-        },
-        {
-          type: 'column',
-          name: 'Volume',
-          data: [1, 2, 3, 4, 5, 6],
-          yAxis: 1,
+          color: '#199079',
         },
         {
           type: 'line',
-          name: 'Line',
-          data: [20, 21, 22, 23, 24, 25, 26],
+          id: 'overlay',
+          // linkedTo: 'aapl',
           yAxis: 0,
+          data: data,
+          color: '#f81057',
         },
       ],
     });
+
+    chart.series[1].points.forEach(function (point, index) {
+      if (index % 2 == 0) {
+        point.update({
+          color: '#56e2c7',
+        });
+      }
+      if (index % 2 != 0) {
+        point.update({
+          color: '#f92667',
+        });
+      }
+    });
   }
+
   ///////////////
   /////////////
   ///////////

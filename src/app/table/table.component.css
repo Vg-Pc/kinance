@@ -219,3 +219,7 @@ input::-webkit-inner-spin-button {
 .chart-0 {
   height: calc(75vh + 16.25px - 60.8px);
 }
+
+/* #chart {
+  width: calc(100% - 100px);
+} */
