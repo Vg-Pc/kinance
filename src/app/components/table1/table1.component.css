@@ -1,0 +1,35 @@
+.nav-bar {
+  display: flex;
+  flex-flow: nowrap;
+  justify-content: space-between;
+  align-items: center;
+
+  height: 50px;
+  padding: 5px 30px;
+  border-bottom: 1px solid #38342e;
+
+  background-color: #021022;
+  color: white;
+}
+.right-nav-bar {
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+.right-nav-bar button {
+  color: white;
+  border: none;
+  border-radius: 10px;
+  padding: 5px 0;
+}
+.side-bar {
+  background-color: #021022;
+  width: 105px;
+
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+}
+.content {
+  width: 100%;
+}

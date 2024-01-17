@@ -1,0 +1,225 @@
+.container-content {
+  background-color: black;
+  height: 100%;
+  width: 100%;
+
+  display: flex;
+  flex-flow: nowrap;
+
+  color: white;
+  font-family: "Sarabun, sans-serif !important";
+}
+.left-content {
+  background-color: #010d1b;
+  /* width: 90vw; */
+  /* -webkit-box-flex: 0; */
+  /* -ms-flex: 0 0 calc(100% - 210px); */
+  /* flex: 0 0 calc(100% - 214px); */
+  width: calc(100% - 214px);
+  margin: 0 2px;
+}
+.top-left-content {
+  height: calc(75vh + 16.25px - 60.8px);
+  background-image: url("../../assets/img/kinance_bg_chart.58c9a402.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+.bottom-left-content {
+  bottom: 0;
+  height: calc(25vh - 16.25px);
+}
+.tab-header {
+  display: flex;
+  flex-flow: nowrap;
+  justify-content: space-between;
+}
+.tab-header-item {
+  padding: 0 25px;
+
+  color: #3e4d58;
+  font-weight: 600;
+}
+.tab-header-item-active {
+  /* height: 28px; */
+  padding: 0 25px;
+  font-weight: 600;
+  border-bottom: 4px solid #199079;
+
+  color: white;
+}
+.tab-content {
+  display: flex;
+  flex-flow: nowrap;
+  justify-content: center;
+}
+.history-box {
+  display: grid;
+  grid-template-columns: auto auto auto auto auto;
+
+  margin: 0 15px;
+  padding: 10px;
+}
+.history-point-yin {
+  height: 25px;
+  width: 25px;
+  border-radius: 36px;
+  margin: 2px;
+
+  background-color: #f81057;
+}
+.history-point-yang {
+  height: 25px;
+  width: 25px;
+  border-radius: 36px;
+  margin: 2px;
+
+  background-color: #199079;
+}
+.history-point-null {
+  height: 25px;
+  width: 25px;
+  border-radius: 36px;
+  margin: 2px;
+
+  background-color: #2f3242;
+}
+.right-content {
+  background-color: #010d1b;
+  width: 190px !important;
+  /* max-width: calc(100% - 210px); */
+  padding: 0.5rem 10px;
+}
+.row-above {
+  display: flex;
+  flex-flow: nowrap;
+}
+.row-above button {
+  background-color: #1d233b;
+  color: white;
+  min-height: 40px;
+  min-width: 40px;
+  border: none;
+  border-radius: 4px;
+
+  font-size: 20px;
+  font-weight: 700;
+  text-align: center;
+}
+.row-above input {
+  background-color: #181a1b;
+  color: white;
+  width: 100%;
+
+  border: none;
+  border-radius: 0 4px 4px 0;
+  padding: 3px 3px 3px 0;
+  margin: 0 7px 0 0;
+}
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+.row-above input:focus-visible {
+  border: none;
+  outline: none;
+}
+.prefix-money-input {
+  background-color: #181a1b;
+  color: white;
+
+  height: 40px;
+  border-radius: 4px 0 0 4px;
+  margin: 0 0 0 7px;
+  padding: 0 6px;
+
+  display: flex;
+  align-items: center;
+}
+.row-below {
+  width: 100%;
+  display: flex;
+  flex-flow: nowrap;
+  justify-content: space-between;
+
+  margin: 8px 0;
+}
+.row-below button {
+  background-color: #1d233b;
+  color: white;
+  width: calc((100% - 12px) / 3);
+  height: 36px;
+
+  border: none;
+  border-radius: 10px;
+  /* margin: 0 3px; */
+
+  font-size: 14px;
+  font-weight: 400;
+  text-align: center;
+}
+.button-above button {
+  background-color: #373c3e;
+  width: 100%;
+  height: 60px;
+
+  border-radius: 10px;
+  border: none;
+  margin: 0.375rem 0;
+
+  color: white;
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.button-buy-active {
+  background-color: #1fb497 !important;
+  /* width: 100%;
+  height: 60px;
+
+  border-radius: 10px;
+  border: none;
+  margin: 0.75rem 0;
+
+  color: white;
+  font-size: 20px;
+  font-weight: 700; */
+}
+
+.button-sell-active {
+  background-color: #f81057 !important;
+  /* width: 100%;
+  height: 60px;
+
+  border-radius: 10px;
+  border: none;
+  margin: 0.75rem 0;
+
+  color: white;
+  font-size: 20px;
+  font-weight: 700; */
+}
+
+.profit {
+  text-align: center;
+  color: white;
+  font-size: 14px;
+
+  padding: 1rem 0 0.25rem 0;
+}
+
+.progress {
+  height: 0.4rem;
+  background-color: #199079;
+  margin: 0 0 0.5rem 0;
+  border-radius: 0.25rem;
+}
+
+.chart-0 {
+  height: calc(75vh + 16.25px - 60.8px);
+}
+
+/* #chart {
+  width: calc(100% - 100px);
+} */
