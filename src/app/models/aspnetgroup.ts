@@ -1,6 +1,6 @@
 ﻿export class AspNetGroup {
-	groupId: string;
-	name: any;
-	code: any;
-	departmentId: string
+  groupId: string | undefined;
+  name: any | undefined;
+  code: any | undefined;
+  departmentId: string | undefined;
 }

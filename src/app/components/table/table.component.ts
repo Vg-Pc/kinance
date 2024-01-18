@@ -281,6 +281,9 @@ export class TableComponent {
         height: 'height: calc(75vh + 16.25px);',
         backgroundColor: 'transparent',
       },
+      credits: {
+        enabled: false,
+      },
       rangeSelector: {
         enabled: false,
       },
