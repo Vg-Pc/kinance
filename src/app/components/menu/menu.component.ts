@@ -3,11 +3,11 @@ import Handsontable from 'handsontable';
 import { HyperFormula } from 'hyperformula';
 
 @Component({
-  selector: 'app-table1',
-  templateUrl: './table1.component.html',
-  styleUrls: ['./table1.component.css']
+  selector: 'app-menu',
+  templateUrl: './menu.component.html',
+  styleUrls: ['./menu.component.css'],
 })
-export class Table1Component {
+export class MenuComponent {
   public hot: any;
   // public _self = this
   public data = [
@@ -23,18 +23,18 @@ export class Table1Component {
     ['150', '423', '0.82', '11', ''],
     ['30', '216', '0.26', '9', ''],
   ];
-  public activeEditor: any
-  public glb_indexRow: any
-  public glb_indexEndRow: any
-  public glb_indexCol: any
-  public glb_indexEndCol: any
-  public CellsClickUpValue: any
-  public CellsClickDownValue: any
+  public activeEditor: any;
+  public glb_indexRow: any;
+  public glb_indexEndRow: any;
+  public glb_indexCol: any;
+  public glb_indexEndCol: any;
+  public CellsClickUpValue: any;
+  public CellsClickDownValue: any;
   public options = {
-    licenseKey: 'gpl-v3', //... other options  
-  }
-  public hfInstance = HyperFormula.buildFromArray(this.data, this.options)
-  ngOnInit() { }
+    licenseKey: 'gpl-v3', //... other options
+  };
+  public hfInstance = HyperFormula.buildFromArray(this.data, this.options);
+  ngOnInit() {}
   detectChanges = () => {
     console.log('detectChanges');
   };
@@ -67,40 +67,61 @@ export class Table1Component {
       type: 'numeric',
       afterOnCellMouseDown(event, coords, TD) {
         console.log('_self.CellsClickUpValue', _self.CellsClickUpValue);
-        if (_self.activeEditor?.TEXTAREA?.value == "=") {
-          
+        if (_self.activeEditor?.TEXTAREA?.value == '=') {
         }
-        if (_self.activeEditor?.TEXTAREA?.value?.charAt(0) === "=") {
-          _self.CellsClickUpValue = _self.hfInstance.simpleCellAddressToString({ sheet: 0, col: coords.col, row: coords.row }, 0);
-          if (!_self.activeEditor || !_self.activeEditor.isOpened() || event.target === _self.activeEditor.TEXTAREA) {
-            return
+        if (_self.activeEditor?.TEXTAREA?.value?.charAt(0) === '=') {
+          _self.CellsClickUpValue = _self.hfInstance.simpleCellAddressToString(
+            { sheet: 0, col: coords.col, row: coords.row },
+            0
+          );
+          if (
+            !_self.activeEditor ||
+            !_self.activeEditor.isOpened() ||
+            event.target === _self.activeEditor.TEXTAREA
+          ) {
+            return;
           }
-          var EditorValue = _self.activeEditor.TEXTAREA.value[_self.activeEditor.TEXTAREA.value.length - 1];
+          var EditorValue =
+            _self.activeEditor.TEXTAREA.value[
+              _self.activeEditor.TEXTAREA.value.length - 1
+            ];
           if (_self.CellsClickDownValue === _self.CellsClickUpValue) {
-            if (_self.activeEditor?.TEXTAREA?.value === "=" || EditorValue == "+" || EditorValue == "-" || EditorValue == "*" || EditorValue == "/" || EditorValue == "(") {
+            if (
+              _self.activeEditor?.TEXTAREA?.value === '=' ||
+              EditorValue == '+' ||
+              EditorValue == '-' ||
+              EditorValue == '*' ||
+              EditorValue == '/' ||
+              EditorValue == '('
+            ) {
               _self.activeEditor.TEXTAREA.value += _self.CellsClickDownValue;
-            }
-            else {
-              _self.activeEditor.TEXTAREA.value += "," + _self.CellsClickDownValue;
+            } else {
+              _self.activeEditor.TEXTAREA.value +=
+                ',' + _self.CellsClickDownValue;
             }
           } else {
-            _self.activeEditor.TEXTAREA.value += _self.CellsClickDownValue += ":" + _self.CellsClickUpValue;
+            _self.activeEditor.TEXTAREA.value += _self.CellsClickDownValue +=
+              ':' + _self.CellsClickUpValue;
           }
-
         } else {
-          console.log("Clickdown neu k co dau bang");
+          console.log('Clickdown neu k co dau bang');
         }
-        _self.handleShowActiveEditor()
+        _self.handleShowActiveEditor();
       },
       beforeOnCellMouseUp(event, coords, TD) {
-        if (_self.activeEditor?.TEXTAREA?.value?.charAt(0) === "=") {
-          _self.CellsClickDownValue = _self.hfInstance.simpleCellAddressToString({ sheet: 0, col: coords.col, row: coords.row }, 0);
+        if (_self.activeEditor?.TEXTAREA?.value?.charAt(0) === '=') {
+          _self.CellsClickDownValue =
+            _self.hfInstance.simpleCellAddressToString(
+              { sheet: 0, col: coords.col, row: coords.row },
+              0
+            );
           console.log('_self.CellsClickDownValue', _self.CellsClickDownValue);
-            if (_self.CellsClickDownValue === _self.CellsClickDownValue) {
-                console.log("Trùng nhau nhé");
-            } else {
-                _self.activeEditor.TEXTAREA.value += ":" + _self.CellsClickDownValue ;
-            }
+          if (_self.CellsClickDownValue === _self.CellsClickDownValue) {
+            console.log('Trùng nhau nhé');
+          } else {
+            _self.activeEditor.TEXTAREA.value +=
+              ':' + _self.CellsClickDownValue;
+          }
         }
         //copy formulass of 1 cell
         // if (_self.activeEditor?.TEXTAREA?.value?.charAt(0) === "=") {
@@ -141,8 +162,6 @@ export class Table1Component {
         //   console.log("ClickUp neu k co dau bang");
         // }
       },
-      
     });
-
   }
 }

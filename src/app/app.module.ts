@@ -1,17 +1,16 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
+import { registerAllModules } from 'handsontable/registry';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { HotTableModule } from '@handsontable/angular';
-import { registerAllModules } from 'handsontable/registry';
-import { Table1Component } from './components/table1/table1.component';
-import { TableComponent } from './components/table/table.component';
+import { MenuComponent } from './components/menu/menu.component';
+import { TradeReportComponent } from './components/tradeReport/tradeReport.component';
 
 // register Handsontable's modules
 registerAllModules();
 @NgModule({
-  declarations: [AppComponent, Table1Component, TableComponent],
+  declarations: [AppComponent, MenuComponent, TradeReportComponent],
   imports: [BrowserModule, AppRoutingModule],
   providers: [],
   bootstrap: [AppComponent],

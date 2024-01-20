@@ -1,12 +1,12 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { TableComponent } from './components/table/table.component';
-import { Table1Component } from './components/table1/table1.component';
+import { MenuComponent } from './components/menu/menu.component';
+import { TradeReportComponent } from './components/tradeReport/tradeReport.component';
 
 const routes: Routes = [
-  { path: '', component: Table1Component },
-  { path: 'table0', component: TableComponent },
-  { path: 'table', component: Table1Component },
+  { path: '', component: MenuComponent },
+  { path: 'home', component: MenuComponent },
+  { path: 'trade', component: TradeReportComponent },
 ];
 
 @NgModule({
