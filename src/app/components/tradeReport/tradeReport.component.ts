@@ -396,9 +396,9 @@ export class TradeReportComponent {
       },
     ];
 
-    // this.transactionDataRender = this.transactionTotalData.filter(
-    //   (item) => item.type == 'open'
-    // );
+    this.transactionDataRender = this.transactionTotalData.filter(
+      (item) => item.type == 'open'
+    );
   }
 
   onChangeTransactionTab(e: any) {
