@@ -10,6 +10,10 @@
 
   background-color: #021022;
   color: white;
+
+  position: sticky;
+  top: 0px;
+  z-index: 1;
 }
 .right-nav-bar {
   height: 100%;
@@ -31,5 +35,5 @@
   align-items: center;
 }
 .content {
-  width: 100%;
+  width: calc(100vw - 105px);
 }

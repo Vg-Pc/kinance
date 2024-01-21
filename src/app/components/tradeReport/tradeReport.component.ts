@@ -15,6 +15,8 @@ export class TradeReportComponent {
   public isActiveTab: boolean = false;
   public tabIdOld: any;
   public historyData: any[] = [];
+  public transactionTotalData: any[] = [];
+  public transactionDataRender: any[] = [];
 
   ngOnInit() {
     this.valueSetAmountArr = [{}];
@@ -145,7 +147,7 @@ export class TradeReportComponent {
       ],
     ];
     this.handleData();
-    // this.renderChart();
+    this.getTransactionData();
   }
   ngAfterViewInit() {
     // this.renderHandsonTable();
@@ -356,5 +358,62 @@ export class TradeReportComponent {
         });
       }
     });
+  }
+
+  getTransactionData() {
+    this.transactionTotalData = [
+      {
+        type: 'close',
+        actionLabel: 'BUY',
+        date: '01/21/2024',
+        actionPrice: 10,
+        valueBelow: 19.5,
+        labelBelow: '10:02:46',
+      },
+      {
+        type: 'close',
+        actionLabel: 'SELL',
+        date: '01/21/2024',
+        actionPrice: 0,
+        valueBelow: 19.5,
+        labelBelow: '10:03:46',
+      },
+      {
+        type: 'open',
+        actionLabel: 'BUY',
+        date: '01/21/2024',
+        actionPrice: 10,
+        labelBelow: 'Trade time',
+        valueBelow: '10:02:46',
+      },
+      {
+        type: 'open',
+        actionLabel: 'SELL',
+        date: '01/21/2024',
+        actionPrice: 0,
+        labelBelow: 'Trade time',
+        valueBelow: '10:03:46',
+      },
+    ];
+
+    // this.transactionDataRender = this.transactionTotalData.filter(
+    //   (item) => item.type == 'open'
+    // );
+  }
+
+  onChangeTransactionTab(e: any) {
+    const closeEl: any = document.getElementById('close-transaction-tab');
+    const openEl: any = document.getElementById('open-transaction-tab');
+    if (e == 'close') {
+      closeEl.setAttribute('class', 'transaction-item-tab-active');
+      openEl.setAttribute('class', 'transaction-item-tab-inactive');
+    }
+    if (e == 'open') {
+      openEl.setAttribute('class', 'transaction-item-tab-active');
+      closeEl.setAttribute('class', 'transaction-item-tab-inactive');
+    }
+    this.transactionDataRender = this.transactionTotalData.filter(
+      (item) => item.type == e
+    );
   }
 }
